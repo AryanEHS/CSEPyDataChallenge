@@ -7,14 +7,20 @@ In this challenge you will be modifying the following function.
     just make sure you return the same data type that went in.'''
 
 def challenge(arg1):
-    #Do something with arg1 here
-    arg1 = str(arg1) + "!"  # Example modification for strings
+    typeOfData = type(arg1)
+    if typeOfData == str:
+        arg1 = arg1 + "!"
+    elif typeOfData == int:
+        arg1 = arg1 + 5
+    elif typeOfData == float:
+        arg1 = arg1 + 2.71828
+    elif typeOfData == bool:
+        arg1 = arg1 + True
+        arg1 = bool(arg1)
     return (arg1)
 
-#checks
-print(challenge("hi"))
-#Should print "hi" and something else, like "hi!"
-print(challenge(5))
-print(challenge(3.14))
-print(challenge(False))
 
+print(challenge("hi"))
+print(challenge(10))
+print(challenge(3.14159))
+print(challenge(False))
